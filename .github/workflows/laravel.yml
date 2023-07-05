@@ -47,12 +47,11 @@ jobs:
       run: |
         cp .env.ci .env
         php artisan key:generate
+    - name: Install NPM dependencies
+      run: npm install
 
     - name: Run Test suite
       run: php artisan test
-
-    - name: Install NPM dependencies
-      run: npm install
 
     - name: Compile assets
       run: npm run build
